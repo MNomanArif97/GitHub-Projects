@@ -57,5 +57,35 @@
 
 // Array JS Code Practice
 
+// let featurePosts = [
+//     "Check out my Netflix clone", 
+//     "Here's the code for my project", 
+//     "I've just relaunched my portfolio"
+// ];
 
+// let myfeaturePosts = [
+//     "Shopify Developer",
+//     "2 years of experience",
+//     "Worked at GigaLabs as Shopify Developer",
+//     "Working in Napollo Software as Shopify Developer"
+// ];
+// let cards = [7, 4]
+// cards.push(6)
+//console.log(cards)
+
+// Push the newMessage to the messages array, and then log out the array
+
+// let messages = [
+//     "Hey, how's it going?",        
+//     "I'm great, thank you! How about you?",
+//     "All good. Been working on my portfolio lately."
+// ]
+
+// let newMessage = "Same here!"
+
+// messages.push(newMessage)
+
+// console.log(messages)
+// messages.pop();
+// console.log(messages);
 

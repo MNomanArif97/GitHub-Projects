@@ -30,7 +30,9 @@ function renderGame(){
 }
 function newCard(){
     console.log("Drawing a new card from the deck!");
-    let thirdCard = 4;
-    sum += thirdCard;
+    let newCard = 4;
+    sum += newCard;
+    allCards.push(newCard);
+    console.log(allCards);
     renderGame();
 }
