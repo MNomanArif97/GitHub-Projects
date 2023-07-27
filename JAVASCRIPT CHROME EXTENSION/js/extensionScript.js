@@ -12,6 +12,21 @@ if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
+// Assuming your data is stored with the key "myLeads" in local storage
+const data = JSON.parse(localStorage.getItem("myLeads"));
+const jsonData = JSON.stringify(data);
+const blob = new Blob([jsonData], { type: "application/json" });
+const url = URL.createObjectURL(blob);
+
+// Create a link element and trigger a click event to download the file
+const downloadLink = document.createElement("a");
+downloadLink.href = url;
+downloadLink.download = "data.json"; // File name
+document.body.appendChild(downloadLink);
+downloadLink.click();
+
+// Clean up the URL object
+URL.revokeObjectURL(url);
 
 function render(leads){
     let listItems = ""
