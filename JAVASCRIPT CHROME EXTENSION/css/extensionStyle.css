@@ -16,6 +16,7 @@ input#input-el{
     margin: 0 0 5px;
     border: 1px solid #5f9341;
 }
+input#download-btn,
 input#tab-btn,
 input#input-btn{
     background-color: #5f9341;
