@@ -10,12 +10,15 @@ const myDatabase = getDatabase(myApp)
 const myShoppingListInDB = ref(myDatabase, "shoppingList")
 
 const inputDataEl = document.getElementById("data-input")
+const inputDataQuatityEl = document.getElementById("data-input-quantity")
 const addBtnEl = document.getElementById("add-item")
 const shoppingListEl = document.getElementById("shopping-list")
 
 addBtnEl.addEventListener("click", function(){
-    let inputValue = inputDataEl.value
-    push(myShoppingListInDB, inputValue)
+    let inputValue = inputDataEl.value + ":   " + inputDataQuatityEl.value
+    if(inputValue !== "" && inputDataEl.value !== "" ){
+        push(myShoppingListInDB, inputValue)
+    }
     clearInputFieldEl()
 })
 
@@ -25,10 +28,6 @@ onValue(myShoppingListInDB, function(snapshot){
         clearShoppingItemsListEl()
         for(let i = 0; i < myShoppingDataBaseList.length; i++){
             let currentShoppingItem = myShoppingDataBaseList[i]
-        
-            let currentShoppingItemID = currentShoppingItem[0];
-            let currentShoppingItemValue = currentShoppingItem[1];
-            
             appendItemToShoppingListEl(currentShoppingItem)
         }
     } else {
@@ -38,6 +37,7 @@ onValue(myShoppingListInDB, function(snapshot){
 
 function clearInputFieldEl(){
     inputDataEl.value = ""
+    inputDataQuatityEl.value = "";
 }
 function clearShoppingItemsListEl(){
     shoppingListEl.innerHTML = ""
